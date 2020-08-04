@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    sqlserver:
+        image: mcr.microsoft.com/mssql/server
+        container_name: mssql
+        restart: always
+        ports: 
+            - "8433:1433"
+        volumes: 
+            - "/d/docker/mssql:/var/opt/mssql"
+        environment: 
+            - SA_PASSWORD=1q2W3e4*
+            - ACCEPT_EULA=Y
